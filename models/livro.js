@@ -10,11 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.autor, { as: "autor" })
     }
   }
   livro.init({
-    autorId: DataTypes.INTEGER,
     titulo: DataTypes.STRING,
     editora: DataTypes.STRING,
     data_public: DataTypes.DATE,
